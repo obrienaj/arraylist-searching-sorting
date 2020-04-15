@@ -7,7 +7,7 @@ public class Sort{
         "lemon", "strawberry", "lime"));
 
         System.out.println("Original: " + fruits);
-        insertionSort(fruits);
+        bubbleSort(fruits);
         System.out.println("Sorted: " + fruits);
     }
 
@@ -48,5 +48,19 @@ public class Sort{
 
     public static void bubbleSort(ArrayList<String> list){
 
+        String temp; 
+        int swapCount = 42;
+
+        while (swapCount > 0){
+            swapCount = 0;
+            for (int n = 1; n < list.size(); n++){
+                if (list.get(n).compareTo(list.get(n - 1)) < 0){
+                    temp = list.get(n);
+                    list.set(n, list.get(n - 1));
+                    list.set(n - 1, temp);
+                    swapCount++;
+                }
+            }
+        }
     }
 }
